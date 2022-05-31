@@ -1,0 +1,8 @@
+<table>
+    <tbody>
+        <tr *ngFor="let row of cartItems">
+            <td>{{row.itemQuantity}}*{{row.itemName}}</td>
+            <td>${{row.itemCost}}</td>
+        </tr>
+    </tbody>
+</table>
