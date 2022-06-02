@@ -17,9 +17,9 @@ export class CheckOutComponent implements OnInit {
   timerExpired() {
     //this.showCart = false;
     this.router.navigate(['/']);
-      for(let item of this.cartItems){
-        item.itemQuantity = null;
-      }
+      // for(let item of this.cartItems){
+      //   item.itemQuantity = null;
+      // }
     }
 
 }

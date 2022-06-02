@@ -47,4 +47,15 @@ export class MenuComponent implements OnInit {
       }
     })
   }
+
+  get checkIfAnyQtygrt5() {
+    let qtyGrt5 = false;
+
+      this.items.forEach(item => {
+        if(item.itemQuantity > 5){
+          qtyGrt5= true;
+        }
+      })
+    return qtyGrt5;
+  }
 }

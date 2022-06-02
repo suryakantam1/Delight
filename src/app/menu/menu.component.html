@@ -2,24 +2,30 @@
 <div>
     <h1>DELIGHT</h1>
 <h2> WEEKEND SPECIALS</h2>
-<table>
-    <tbody>
-        <tr align="center"><b><u>MENU</u></b></tr>
+
+<h6 style="text-align: center;"><b><u>MENU</u></b></h6>
+
+<table class="table table-sm table-striped" style="width: 50%;">
+    <thead>
+        
         <tr> 
-            <td>Item Name</td> 
+            <td [ngClass]="{'table-header': checkIfAnyQtygrt5}">Item Name</td> 
             <td>Price($)</td>
             <td>Quantity</td>
             <td>&nbsp;</td>
         </tr>
+    </thead>
+    <tbody>
         <tr *ngFor="let row of items">
             <td>{{row.itemName}}</td>
             <td>${{row.itemCost}}</td>
             <td><input type="number" [(ngModel)]="row.itemQuantity"></td>
-            <td><button (click)="updateCartItems()">Add to Cart</button></td>
+            <td><button class="btn btn-sm btn-primary" (click)="updateCartItems()">Add to Cart</button></td>
         </tr>
     </tbody>
 </table>
 <button (click)="goToCheckout()">Checkout</button>
+
 
 </div>
 
