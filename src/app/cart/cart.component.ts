@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,6 +9,8 @@ import { MenuComponent } from '../menu/menu.component';
 })
 export class CartComponent implements OnInit {
 
+ nations: any[] = [];
+
   @Input()
   cartItems: any[] = [];
   goBack: boolean = false;
@@ -15,7 +18,10 @@ export class CartComponent implements OnInit {
   @Output()
   timer = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private cartService: CartService) { 
+    this.cartService.getData().subscribe(data =>{console.log(data)
+    this.nations=data.data})
+  }
   
   ngOnInit(): void {
 
